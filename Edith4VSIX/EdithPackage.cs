@@ -37,6 +37,7 @@ namespace Edith4VSIX
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(EdithPackage.PackageGuidString)]
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
+    [ProvideToolWindow(typeof(DebugToolWindow))]
     public sealed class EdithPackage : AsyncPackage
     {
         /// <summary>
@@ -69,6 +70,7 @@ namespace Edith4VSIX
             // When initialized asynchronously, the current thread may be a background thread at this point.
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+            await DebugToolWindowCommand.InitializeAsync(this);
             await AresCommand001.InitializeAsync(this);
             await AresCommand002.InitializeAsync(this);
             await ZeusCommand001.InitializeAsync(this);

@@ -85,6 +85,13 @@
           <ButtonText>ZeusCommand001</ButtonText>
         </Strings>
       </Button>
+      <Button guid="guidEdithPackageCmdSet" id="cmdidDebugToolWindowCommand" type="Button">
+      <!--  <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1" /> -->
+        <Icon guid="guidImages2" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Debug Window</ButtonText>
+        </Strings>
+      </Button>
     </Buttons>
 
     <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
@@ -96,6 +103,7 @@
             must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
       <Bitmap guid="guidImages" href="Resources\AresCommand001.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidImages1" href="Resources\ZeusCommand001.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+     <!-- <Bitmap guid="guidImages2" href="Resources\DebugToolWindowCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />-->
     </Bitmaps>
   </Commands>
 
@@ -122,6 +130,10 @@
     <CommandPlacement guid="guidEdithPackageCmdSet" id="ZEUSmenu" priority="0x0002">
       <Parent guid="guidEdithPackageCmdSet" id="MyGroupForSubmenu" />
     </CommandPlacement>
+    <CommandPlacement guid="guidEdithPackageCmdSet" id="cmdidDebugToolWindowCommand" priority="0x0003">
+      <Parent guid="guidEdithPackageCmdSet" id="MyGroupForSubmenu" />
+    </CommandPlacement>
+    
     <CommandPlacement guid="guidEdithPackageCmdSet" id="AresCommandGroup" priority="0x0001">
       <Parent guid="guidEdithPackageCmdSet" id="ARESmenu" />
     </CommandPlacement>
@@ -156,6 +168,8 @@
       <IDSymbol name="ZEUSmenu" value="0x0101" />
       
       <!-- Warning!!: Keep the values in sync with the code in XXXXCommand001.cs  -->
+      <IDSymbol name="cmdidDebugToolWindowCommand" value="0x0A00"  />
+      
       <IDSymbol name="AresCommand001Id" value="0x0A01" />
       <IDSymbol name="AresCommand002Id" value="0x0A02" />
       
@@ -172,6 +186,15 @@
     </GuidSymbol>
   
     <GuidSymbol value="{1dea346b-bdd9-444c-b779-cb23e96e9f99}" name="guidImages1">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{d9ed8034-78f6-4fd8-8c2c-a6a96bcaf47f}" name="guidImages2">
       <IDSymbol name="bmpPic1" value="1" />
       <IDSymbol name="bmpPic2" value="2" />
       <IDSymbol name="bmpPicSearch" value="3" />
